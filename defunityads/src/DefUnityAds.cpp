@@ -22,7 +22,7 @@ static int Initialize(lua_State* L) {
     if (lua_type(L, 3) != LUA_TNONE){
         enableDebugMode_lua = luaL_checkbool(L, 3);
     }
-    DefUnityAds_Initialize(gameId_lua, enableDebugMode_lua);
+    //DefUnityAds_Initialize(gameId_lua, enableDebugMode_lua);
     return 0;
 }
 
@@ -31,7 +31,7 @@ static int Show(lua_State* L) {
     if (lua_type(L, 1) != LUA_TNONE){
 		placementId_lua = (char*)luaL_checkstring(L, 1);
     }
-    DefUnityAds_Show(placementId_lua);
+    //DefUnityAds_Show(placementId_lua);
     return 0;
 }
 
@@ -40,7 +40,7 @@ static int isReady(lua_State* L) {
     if (lua_type(L, 1) != LUA_TNONE){
         placementId_lua = (char*)luaL_checkstring(L, 1);
     }
-    bool status = DefUnityAds_isReady(placementId_lua);
+    bool status = false;//DefUnityAds_isReady(placementId_lua);
     lua_pushboolean(L, status);
     return 1;
 }
@@ -146,7 +146,7 @@ dmExtension::Result FinalizeUnityAds(dmExtension::Params* params)
 
 static dmExtension::Result UpdateUnityAds(dmExtension::Params* params)
 {
-    callback_updates();
+    //callback_updates();
     return dmExtension::RESULT_OK;
 }
 
